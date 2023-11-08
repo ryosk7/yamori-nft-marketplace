@@ -97,6 +97,11 @@ GEM
       openssl (>= 2.2, < 4.0)
       rbsecp256k1 (~> 6.0)
       scrypt (~> 3.0)
+    faraday (2.7.11)
+      base64
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
     ffi (1.16.3)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
@@ -248,6 +253,7 @@ DEPENDENCIES
   bootsnap
   debug
   eth
+  faraday
   importmap-rails
   pg (~> 1.1)
   puma (>= 5.0)
