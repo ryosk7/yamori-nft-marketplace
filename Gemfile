@@ -14,6 +14,7 @@ gem "tailwindcss-rails"
 # <---- 追加したGem start ---->
 gem "eth"
 gem "faraday"
+gem "kaminari"
 # <---- 追加したGem end   ---->
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
