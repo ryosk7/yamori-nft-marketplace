@@ -1,4 +1,45 @@
-<div>
-  <h1 class="font-bold text-4xl">NftCollections#show</h1>
-  <p>Find me in app/views/nft_collections/show.html.erb</p>
+<p class="pt-5">Created by</p>
+<h1 class="font-semibold text-3xl">
+  <%= @nft_collection.name %>
+</h1>
+<div class="flex justify-center">
+  <div class="pt-5 pb-20">
+    <%= turbo_frame_tag "nfts-page-#{@nfts.current_page}" do %>
+      <div class="
+              grid grid-cols-1 items-center
+              sm:grid-cols-2 md:grid-cols-3
+              lg:grid-cols-4 xl:grid-cols-6
+              gap-x-8
+           "
+      >
+        <% @nfts.each do |nft| %>
+          <div class="grid pt-5 py-4">
+            <div class="shadow-lg rounded-b-md">
+              <% if nft.present? && nft[:metadata].present? %>
+                <%=
+                  image_tag NftCollection.replaced_ipfs_image_url(nft[:metadata]["image"]),
+                  class: "w-60 h-60 rounded-lg pb-2"
+                %>
+              <% end %>
+              <div class="grid">
+                <div class="my-4 mx-2">
+                  <% if nft.present? && nft[:metadata].present? %>
+                    <p class="font-semibold"><%= nft[:metadata]["name"].to_s %></p>
+                  <% end %>
+                  <% if nft.present? && nft[:minter_address].present? %>
+                    <p class="font-semibold"><%= nft[:minter_address]&.slice(0..5) %></p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%=
+        turbo_frame_tag "nfts-page-#{@nfts.next_page}",
+        loading: :lazy,
+        src: path_to_next_page(@nfts)
+      %>
+    <% end %>
+  </div>
 </div>
