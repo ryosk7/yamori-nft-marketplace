@@ -5,7 +5,9 @@
 <div class="flex justify-center">
   <div class="pt-5 pb-20">
     <%= turbo_frame_tag "nfts-page-#{@nfts.current_page}" do %>
-      <div class="
+      <div
+           data-controller="metamask"
+           class="
               grid grid-cols-1 items-center
               sm:grid-cols-2 md:grid-cols-3
               lg:grid-cols-4 xl:grid-cols-6
@@ -30,6 +32,17 @@
                     <p class="font-semibold"><%= nft[:minter_address]&.slice(0..5) %></p>
                   <% end %>
                 </div>
+                <% if current_user_wallet.nil? %>
+                 <button class="bg-teal-500 py-3 mx-2 mb-3 items-center flex justify-center">
+                   <p
+                     data-action="click->metamask#buyNFT"
+                     class="text-white leading-none"
+                     id="<%= nft[:token_id] %>"
+                   >
+                     購入
+                   </p>
+                 </button>
+                <% end %>
               </div>
             </div>
           </div>
