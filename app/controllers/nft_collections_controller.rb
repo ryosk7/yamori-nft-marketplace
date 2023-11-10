@@ -17,6 +17,7 @@ class NftCollectionsController < ApplicationController
       next if data["minter_address"].nil?
       {
         token_address: data["token_address"],
+        token_id: data["token_id"],
         metadata: JSON.parse(data["metadata"]),
         minter_address: data["minter_address"],
       }
