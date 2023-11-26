@@ -1,5 +1,7 @@
 # Yamori NFT Marketplace
 
+![yamori_nft_top_image](https://github.com/ryosk7/yamori-nft-marketplace/blob/main/repository_images/yamori_nft_marketplace_snapshot.png?raw=true)
+
 技術書展 15 向けに書いた「Ruby でつくるマーケットプレイス」に沿って作られたアプリです。
 
 本はこちらで購入可能です。
