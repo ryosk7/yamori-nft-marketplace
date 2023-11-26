@@ -1,24 +1,35 @@
-# README
+# Yamori NFT Marketplace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+技術書展 15 向けに書いた「Ruby でつくるマーケットプレイス」に沿って作られたアプリです。
 
-Things you may want to cover:
+本はこちらで購入可能です。
 
-* Ruby version
+https://techbookfest.org/product/4D0SCAdL9Rk75SttLJ4xsS?productVariantID=mihs8CKjPy3SvwUwF1N3XJ
 
-* System dependencies
+## 本の読み方
 
-* Configuration
+このリポジトリは、本書の章とブランチが完全に一致されるように作られています。
+| 本書 | ブランチ |
+| ---- | ---- |
+| 第３章 | chapter-3 |
+| 第４章 | chapter-4 |
+| 第５章 | chapter-5 |
+| 第６章 | chapter-6 |
+| 第７章 | chapter-7 |
+| 第８章 | chapter-8 |
 
-* Database creation
+## セットアップ
 
-* Database initialization
+```sh
+$ bundle install
+$ ./bin/dev
+```
 
-* How to run the test suite
+## スマートコントラクト
 
-* Services (job queues, cache servers, search engines, etc.)
+本書で利用されるスマートコントラクトはこちらのリポジトリに置いてあります。
+https://github.com/ryosk7/hardhat-contracts
 
-* Deployment instructions
+## お問合せ
 
-* ...
+https://x.com/ryosk7 にダイレクトメッセージをお願いします。
